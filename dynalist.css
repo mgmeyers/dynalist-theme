@@ -43,8 +43,15 @@
   --node-blue-dark: #0a84ff33;
   --node-purple-dark: #bf5af233;
 
-  --text-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  --text-font: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   --text-line-height: 1.5;
+
+  --text-medium-font-size: 18px;
+  --text-medium-line-height: 34px;
+
+  --text-large-font-size: 20px;
+  --text-large-line-height: 38px;
+  
   --text-font-weight: 400;
 
   --ui-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
@@ -72,11 +79,25 @@ body,
 .u-use-pref-font {
   font-family: var(--text-font);
   font-weight: var(--text-font-weight);
-  line-height: var(--text-line-height) !important;
+  font-feature-settings: "ss01", "cv05", "cv07", "cv08";
 }
 
-.node-line {
-  line-height: var(--text-line-height) !important;
+.is-mediumFont .Node-contentContainer {
+  font-size: var(--text-medium-font-size);
+  line-height: var(--text-medium-line-height) !important;
+}
+
+.is-mediumFont .node-line {
+  line-height: var(--text-medium-line-height) !important;
+}
+
+.is-largeFont .Node-contentContainer {
+  font-size: var(--text-large-font-size);
+  line-height: var(--text-large-line-height) !important;
+}
+
+.is-largeFont .node-line {
+  line-height: var(--text-large-line-height) !important;
 }
 
 /* Theme ------------------------- */
@@ -346,6 +367,10 @@ body,
 
 /* UI ------------------------- */
 
+::-webkit-scrollbar {
+  background-color: rgb(0, 0, 0, 0);
+}
+
 /* - Main container */
 .is-desktop .main-container {
   height: calc(100% - var(--app-header-height));
@@ -364,6 +389,7 @@ body,
 }
 
 .status-bar {
+  display: none;
   position: relative;
   flex-grow: 0;
   font-size: 11px;
@@ -428,6 +454,14 @@ body,
 
 .header-sync-state.mod-synced {
   display: none !important;
+}
+
+.header-sync-state.mod-sync-now {
+  text-decoration: none;
+}
+
+.header-sync-state.mod-syncing {
+  top: 0;
 }
 
 /* - LeftPane */
@@ -531,8 +565,7 @@ body,
 .node-menu-icons-container {
   font-size: 18px;
   vertical-align: unset;
-  border-radius: 6px;
-  padding: 2px;
+  padding: 0;
   position: relative;
 }
 
@@ -549,12 +582,12 @@ body,
 .node-hover {
   margin-left: 0;
   position: absolute;
-  top: 6px;
-  transform: translate3d(-97%, 0, 0);
+  top: 8px;
+  transform: translate3d(-100%, 0, 0);
 }
 
 .Node.is-currentRoot > .Node-self > .node-hover {
-  top: 8px;
+  top: 10px;
   margin-left: 0;
   transform: translate3d(-100%, 0, 0);
 }
