@@ -1,0 +1,658 @@
+@font-face{
+    font-family: 'boxicons';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.eot');
+    src: url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.eot') format('embedded-opentype'),
+    url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.woff2') format('woff2'),
+    url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.woff') format('woff'),
+    url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.ttf') format('truetype'),
+    url('https://unpkg.com/boxicons@2.0.7/fonts/boxicons.svg?#boxicons') format('svg');
+}
+
+:root {
+  --color-90-light: #232526;
+  --color-50-light: #797979;
+  --color-10-light: #e5e5e5;
+  --color-3-light: #f4f4f4;
+  --color-0-light: #fff;
+
+  --color-90-dark: rgba(255, 255, 255, 0.7);
+  --color-50-dark: rgba(235, 235, 245, 0.6);
+  --color-10-dark: rgba(235, 235, 245, 0.3);
+  --color-3-dark: #363636;
+  --color-0-dark: #1e1e1e;
+
+  --shade-plus-darker-light: rgba(0, 0, 0, 0.05);
+  --shade-plus-lighter-light: rgba(245, 245, 245, 0.15);
+
+  --shade-plus-darker-dark: rgba(255, 255, 255, 0.15);
+
+  --node-red-light: #FF3B3066;
+  --node-orange-light: #FF950066;
+  --node-yellow-light: #FFCC0066;
+  --node-green-light: #34C75966;
+  --node-blue-light: #007AFF66;
+  --node-purple-light: #AF52DE66;
+
+  --node-red-dark: #ff453a33;
+  --node-orange-dark: #ff9f0a33;
+  --node-yellow-dark: #ffd60a33;
+  --node-green-dark: #32d74b33;
+  --node-blue-dark: #0a84ff33;
+  --node-purple-dark: #bf5af233;
+
+  --text-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  --text-line-height: 1.5;
+  --text-font-weight: 400;
+
+  --ui-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  --icon-font: "boxicons";
+
+  --left-nav-width: 42px;
+  --app-header-height: 52px;
+}
+
+/* Font */
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+.Pane-headerText,
+.search-tip-header,
+.view-filter-option-title,
+.is-desktop .setting-section-title {
+  font-family: var(--ui-font) !important;
+}
+
+.u-use-pref-font {
+  font-family: var(--text-font);
+  font-weight: var(--text-font-weight);
+  line-height: var(--text-line-height) !important;
+}
+
+.node-line {
+  line-height: var(--text-line-height) !important;
+}
+
+/* Theme ------------------------- */
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background-color: var(--color-0-light);
+    color: var(--color-90-light);
+  }
+
+  .AppHeader {
+    background: var(--color-0-light);
+    border-bottom: none;
+  }
+
+  .is-desktop .AppHeader-desktopControls {
+    border-bottom: 1px solid var(--shade-plus-darker-light);
+  }
+
+  .AppHeader-desktopControls .AppHeader-icon {
+    color: var(--color-50-light);
+  }
+
+  .AppHeader-desktopControls .AppHeader-icon:hover {
+    color: var(--color-50-light);
+    background-color: var(--shade-plus-darker-light);
+  }
+
+  .AppHeader-syncStatus {
+    color: var(--color-50-light);
+  }
+
+  .is-desktop .LeftPaneSplitter:after {
+    border-right: 1px solid var(--shade-plus-darker-light);
+  }
+
+  .is-desktop .LeftPaneSlidebarContainer {
+    border-right: none;
+  }
+
+  .status-bar,
+  .is-desktop .LeftPaneContainer,
+  .is-desktop .Pane,
+  .AppContainer,
+  .DocumentTools-overlay {
+    background-color: var(--color-0-light);
+  }
+
+  .DocumentTools-icon {
+    color: var(--color-50-light);
+  }
+
+  .DocumentSearch-icon:hover,
+  .DocumentTools-filterView:hover {
+    background-color: var(--shade-plus-darker-light);
+  }
+
+  .status-bar {
+    color: var(--color-50-light);
+    border-top: 1px solid var(--shade-plus-darker-light);
+  }
+
+  .DocumentBreadcrumb {
+    color: var(--color-50-light);
+  }
+
+  .DocumentBreadcrumb-delimiter:after {
+    color: var(--color-10-light);
+  }
+
+  .node-icon {
+    color: var(--color-50-light);
+  }
+
+  .Node-bullet:before {
+    color: var(--color-50-light);
+  }
+
+  .node-menu-icons-container {
+    background-color: var(--color-0-light);
+  }
+
+  .is-desktop .LeftPaneContainer-nav {
+    background: var(--color-0-light);
+  }
+
+  .is-desktop .LeftPaneContainer-navItem {
+    background: var(--color-0-light);
+    color: var(--color-50-light);
+  }
+
+  .is-desktop .LeftPaneContainer-navItem.is-active,
+  .is-desktop .LeftPaneContainer-navItem:hover {
+    background: var(--shade-plus-darker-light);
+  }
+
+  .CurrentLineHighlight {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .Node.is-currentRoot > .Node-self, .Node-self.is-heading {
+    color: var(--color-90-light);
+  }
+
+  .set-color-label[data-color="1"],
+  .Node-contentContainer.mod-color-label-1 {
+    background-color: var(--node-red-light);
+  }
+
+  .set-color-label[data-color="2"],
+  .Node-contentContainer.mod-color-label-2 {
+    background-color: var(--node-orange-light);
+  }
+
+  .set-color-label[data-color="3"],
+  .Node-contentContainer.mod-color-label-3 {
+    background-color: var(--node-yellow-light);
+  }
+
+  .set-color-label[data-color="4"],
+  .Node-contentContainer.mod-color-label-4 {
+    background-color: var(--node-green-light);
+  }
+
+  .set-color-label[data-color="5"],
+  .Node-contentContainer.mod-color-label-5 {
+    background-color: var(--node-blue-light);
+  }
+
+  .set-color-label[data-color="6"],
+  .Node-contentContainer.mod-color-label-6 {
+    background-color: var(--node-purple-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: var(--color-0-dark);
+    color: var(--color-90-dark);
+  }
+
+  .AppHeader {
+    background: var(--color-3-dark);
+    border-bottom: none;
+  }
+
+  .is-desktop .AppHeader-desktopControls {
+    border-bottom: 1px solid #000;
+  }
+
+  .AppHeader-desktopControls .AppHeader-icon {
+    color: var(--color-50-dark);
+  }
+
+  .AppHeader-desktopControls .AppHeader-icon:hover {
+    color: var(--color-50-dark);
+    background-color: var(--shade-plus-darker-dark);
+  }
+
+  .AppHeader-syncStatus {
+    color: var(--color-50-dark);
+  }
+
+  .is-desktop .LeftPaneSplitter:after {
+    border-right: 1px solid var(--shade-plus-darker-dark);
+  }
+
+  .is-desktop .LeftPaneSlidebarContainer {
+    border-right: none;
+  }
+
+  .status-bar,
+  .is-desktop .LeftPaneContainer,
+  .is-desktop .Pane,
+  .AppContainer,
+  .DocumentTools-overlay {
+    background-color: var(--color-0-dark);
+  }
+
+  .DocumentTools-icon {
+    color: var(--color-50-dark);
+  }
+
+  .DocumentSearch-icon:hover,
+  .DocumentTools-filterView:hover {
+    background-color: var(--shade-plus-darker-dark);
+  }
+
+  .status-bar {
+    color: var(--color-50-dark);
+    border-top: 1px solid var(--color-0-dark);
+  }
+
+  .DocumentBreadcrumb {
+    color: var(--color-50-dark);
+  }
+
+  .DocumentBreadcrumb-delimiter:after {
+    color: var(--color-10-dark);
+  }
+
+  .node-icon {
+    color: var(--color-50-dark);
+  }
+
+  .Node-bullet:before {
+    color: var(--color-50-dark);
+  }
+
+  .node-menu-icons-container {
+    background-color: var(--color-0-dark);
+  }
+
+  .is-desktop .LeftPaneContainer-nav {
+    background: var(--color-0-dark);
+  }
+
+  .is-desktop .LeftPaneContainer-navItem {
+    background: var(--color-0-dark);
+    color: var(--color-50-dark);
+  }
+
+  .is-desktop .LeftPaneContainer-navItem.is-active,
+  .is-desktop .LeftPaneContainer-navItem:hover {
+    background: var(--shade-plus-darker-dark);
+  }
+
+  .CurrentLineHighlight {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .Node.is-currentRoot > .Node-self, .Node-self.is-heading {
+    color: var(--color-90-dark);
+  }
+
+  .set-color-label[data-color="1"],
+  .Node-contentContainer.mod-color-label-1 {
+    background-color: var(--node-red-dark);
+  }
+
+  .set-color-label[data-color="2"],
+  .Node-contentContainer.mod-color-label-2 {
+    background-color: var(--node-orange-dark);
+  }
+
+  .set-color-label[data-color="3"],
+  .Node-contentContainer.mod-color-label-3 {
+    background-color: var(--node-yellow-dark);
+  }
+
+  .set-color-label[data-color="4"],
+  .Node-contentContainer.mod-color-label-4 {
+    background-color: var(--node-green-dark);
+  }
+
+  .set-color-label[data-color="5"],
+  .Node-contentContainer.mod-color-label-5 {
+    background-color: var(--node-blue-dark);
+  }
+
+  .set-color-label[data-color="6"],
+  .Node-contentContainer.mod-color-label-6 {
+    background-color: var(--node-purple-dark);
+  }
+}
+
+/* UI ------------------------- */
+
+/* - Main container */
+.is-desktop .main-container {
+  height: calc(100% - var(--app-header-height));
+  display: flex;
+  flex-direction: column;
+}
+
+.is-desktop .DocumentContainer {
+  height: 100% !important;
+  overflow-y: auto;
+}
+
+.normal-view {
+  flex-grow: 1;
+  top: 0;
+}
+
+.status-bar {
+  position: relative;
+  flex-grow: 0;
+  font-size: 11px;
+  padding: 6px 21px;
+  max-height: unset;
+  z-index: 100;
+}
+
+/* - AppHeader */
+.AppHeader {
+  box-shadow: none;
+}
+
+.is-desktop .AppHeader {
+  height: var(--app-header-height);
+  -webkit-app-region: drag;
+}
+
+.is-desktop .AppHeader-desktopControls {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 21px;
+}
+
+.AppHeader-mainMenu,
+.AppHeader-settings,
+.AppHeader-notifications {
+  font-size: 16px;
+  -webkit-app-region: no-drag;
+}
+
+.AppHeader-desktopControls .AppHeader-icon,
+.AppHeader-desktopControls .AppHeader-syncStatus {
+  display: block;
+  position: unset;
+  padding: 4px 6px;
+  margin: 0 5px 0 0;
+}
+
+.AppHeader-desktopControls .AppHeader-icon {
+  font-size: 18px;
+  border: none;
+  box-shadow: none;
+  border-radius: 6px;
+}
+
+.AppHeader-desktopControls .AppHeader-icon:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.AppHeader-desktopControls .AppHeader-syncStatus {
+  margin-right: 17px;
+}
+
+.header-sync-state {
+  padding: 0 !important;
+  font-size: 14px;
+}
+
+.header-sync-state.mod-synced {
+  display: none !important;
+}
+
+/* - LeftPane */
+.is-desktop .LeftPaneContainer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: none;
+  width: var(--left-nav-width);
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.is-desktop .LeftPaneContainer-navItem {
+  font-size: 18px;
+  line-height: 1;
+  display: block;
+  padding: 4px 6px;
+  float: none;
+  margin: 5px auto 0;
+  width: auto;
+  border-radius: 6px;
+}
+
+.is-desktop .LeftPaneContainer-navItem:after {
+  font-size: 18px;
+  display: block;
+  top: 0;
+}
+
+.is-desktop .LeftPaneContainer-panes {
+  width: calc(100% - var(--left-nav-width));
+}
+
+.is-desktop .LeftPaneSlidebarContainer {
+  box-shadow: none;
+}
+
+/* - Breadcrumb */
+.is-desktop .DocumentBreadcrumb {
+  padding: 40px 60px 0;
+  font-size: 14px;
+}
+
+.DocumentBreadcrumb-delimiter:after {
+  font-size: 20px;
+  position: absolute;
+  visibility: visible;
+  left: 50%;
+  top: 1px;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.DocumentBreadcrumb-delimiter {
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  visibility: hidden;
+}
+
+.DocumentBreadcrumb-delimiter:last-child {
+  display: none;
+}
+
+/* - DocumentTools */
+.is-desktop .DocumentTools {
+  display: block;
+  right: 0;
+}
+
+.is-desktop .DocumentTools-overlay {
+  display: none;
+}
+
+.is-desktop .DocumentTools-icon {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+.is-desktop .DocumentSearch-icon,
+.is-desktop .DocumentTools-filterView {
+  padding: 4px 6px;
+  font-size: 18px;
+  line-height: 1;
+  top: 0;
+  border-radius: 6px;
+}
+
+/* - Node */
+.Node-contentContainer {
+  border-radius: 6px;
+}
+
+.Node-contentContainer.has-color {
+  margin-top: -4px;
+  padding: 4px 8px;
+}
+
+.node-menu-icons-container {
+  font-size: 18px;
+  vertical-align: unset;
+  border-radius: 6px;
+  padding: 2px;
+  position: relative;
+}
+
+.Node-self {
+  position: relative;
+}
+
+.Node-self:hover .node-menu-icons-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.node-hover {
+  margin-left: 0;
+  position: absolute;
+  top: 6px;
+  transform: translate3d(-97%, 0, 0);
+}
+
+.Node.is-currentRoot > .Node-self > .node-hover {
+  top: 8px;
+  margin-left: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.node-icon {
+  border-radius: 6px;
+  padding: 4px 6px;
+  min-height: 0 !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  vertical-align: unset;
+  cursor: pointer;
+}
+
+.node-line-strict {
+  padding-top: 0;
+  line-height: unset !important;
+  height: auto !important;
+  min-height: unset !important;
+}
+
+/* Icons */
+
+.AppHeader-mainMenu:before,
+.AppHeader-settings:before,
+.AppHeader-notifications:before,
+.DocumentSearch-icon:before,
+.DocumentTools-filterView:before,
+.node-icon.mod-menu:before,
+.node-icon.mod-zoom:before,
+.node-icon.mod-bookmark:before,
+.is-desktop .LeftPaneContainer-navItem--myFiles:after,
+.is-desktop .LeftPaneContainer-navItem--bookmarks:after,
+.is-desktop .LeftPaneContainer-navItem--tags:after,
+.DocumentBreadcrumb-delimiter:after  {
+  font-family: var(--icon-font) !important;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+}
+
+.AppHeader-mainMenu:before {
+  content: "\eac1";
+}
+
+.AppHeader-settings:before {
+  content: "\e9d0";
+}
+
+.AppHeader-notifications:before {
+  content: "\e935";
+}
+
+.DocumentSearch-icon:before {
+  content: "\eb54";
+}
+
+.DocumentTools-filterView:before {
+  content: "\eb73";
+}
+
+.node-icon.mod-menu:before {
+  content: "\ea14";
+}
+
+.node-icon.mod-zoom:before {
+  content: "\ebec";
+}
+
+.node-icon.mod-bookmark:before {
+  content: "\e94a";
+}
+
+.node-icon.mod-bookmark:hover:before {
+  content: "\e950";
+}
+
+.node-icon.mod-bookmark.is-alreadyBookmarked:before {
+  content: "\ec31";
+}
+
+.node-icon.mod-bookmark.is-alreadyBookmarked:hover:before {
+  content: "\ec36";
+}
+
+.is-desktop .LeftPaneContainer-navItem--myFiles:after {
+  content: "\ea41";
+}
+
+.is-desktop .LeftPaneContainer-navItem--bookmarks:after {
+  content: "\e951";
+}
+
+.is-desktop .LeftPaneContainer-navItem--tags:after {
+  content: "\ea67";
+}
+
+.DocumentBreadcrumb-delimiter:after {
+  content: "\e9b2";
+}
