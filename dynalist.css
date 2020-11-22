@@ -29,19 +29,25 @@
 
   --shade-plus-darker-dark: rgba(255, 255, 255, 0.15);
 
-  --node-red-light: #FF3B3066;
-  --node-orange-light: #FF950066;
-  --node-yellow-light: #FFCC0066;
-  --node-green-light: #34C75966;
-  --node-blue-light: #007AFF66;
-  --node-purple-light: #AF52DE66;
+  --color-red-light: #fd7070;
+  --color-orange-light: #ffaf52;
+  --color-yellow-light: #ffd23f;
+  --color-green-light: #1bd5c0;
+  --color-blue-light: #47c9fe;
+  --color-purple-light: #9a6bff;
+  --color-red-faint-light: #fd707033;
+  --color-orange-faint-light: #ffaf5233;
+  --color-yellow-faint-light: #ffd23f33;
+  --color-green-faint-light: #1bd5c033;
+  --color-blue-faint-light: #47c9fe33;
+  --color-purple-faint-light: #9a6bff33;
 
-  --node-red-dark: #ff453a33;
-  --node-orange-dark: #ff9f0a33;
-  --node-yellow-dark: #ffd60a33;
-  --node-green-dark: #32d74b33;
-  --node-blue-dark: #0a84ff33;
-  --node-purple-dark: #bf5af233;
+  --color-red-faint-dark: #fd707022;
+  --color-orange-faint-dark: #ffaf5222;
+  --color-yellow-faint-dark: #ffd23f22;
+  --color-green-faint-dark: #1bd5c022;
+  --color-blue-faint-dark: #47c9fe22;
+  --color-purple-faint-dark: #9a6bff22;
 
   --text-font: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   --text-line-height: 1.5;
@@ -79,7 +85,7 @@ body,
 .u-use-pref-font {
   font-family: var(--text-font);
   font-weight: var(--text-font-weight);
-  font-feature-settings: "ss01", "cv05", "cv07", "cv08";
+  font-feature-settings: "ss01", "cv05", "cv07";
 }
 
 .is-mediumFont .Node-contentContainer {
@@ -204,32 +210,32 @@ body,
 
   .set-color-label[data-color="1"],
   .Node-contentContainer.mod-color-label-1 {
-    background-color: var(--node-red-light);
+    background-color: var(--color-red-faint-light);
   }
 
   .set-color-label[data-color="2"],
   .Node-contentContainer.mod-color-label-2 {
-    background-color: var(--node-orange-light);
+    background-color: var(--color-orange-faint-light);
   }
 
   .set-color-label[data-color="3"],
   .Node-contentContainer.mod-color-label-3 {
-    background-color: var(--node-yellow-light);
+    background-color: var(--color-yellow-faint-light);
   }
 
   .set-color-label[data-color="4"],
   .Node-contentContainer.mod-color-label-4 {
-    background-color: var(--node-green-light);
+    background-color: var(--color-green-faint-light);
   }
 
   .set-color-label[data-color="5"],
   .Node-contentContainer.mod-color-label-5 {
-    background-color: var(--node-blue-light);
+    background-color: var(--color-blue-faint-light);
   }
 
   .set-color-label[data-color="6"],
   .Node-contentContainer.mod-color-label-6 {
-    background-color: var(--node-purple-light);
+    background-color: var(--color-purple-faint-light);
   }
 }
 
@@ -336,32 +342,32 @@ body,
 
   .set-color-label[data-color="1"],
   .Node-contentContainer.mod-color-label-1 {
-    background-color: var(--node-red-dark);
+    background-color: var(--color-red-faint-dark);
   }
 
   .set-color-label[data-color="2"],
   .Node-contentContainer.mod-color-label-2 {
-    background-color: var(--node-orange-dark);
+    background-color: var(--color-orange-faint-dark);
   }
 
   .set-color-label[data-color="3"],
   .Node-contentContainer.mod-color-label-3 {
-    background-color: var(--node-yellow-dark);
+    background-color: var(--color-yellow-faint-dark);
   }
 
   .set-color-label[data-color="4"],
   .Node-contentContainer.mod-color-label-4 {
-    background-color: var(--node-green-dark);
+    background-color: var(--color-green-faint-dark);
   }
 
   .set-color-label[data-color="5"],
   .Node-contentContainer.mod-color-label-5 {
-    background-color: var(--node-blue-dark);
+    background-color: var(--color-blue-faint-dark);
   }
 
   .set-color-label[data-color="6"],
   .Node-contentContainer.mod-color-label-6 {
-    background-color: var(--node-purple-dark);
+    background-color: var(--color-purple-faint-dark);
   }
 }
 
@@ -553,13 +559,10 @@ body,
 }
 
 /* - Node */
-.Node-contentContainer {
-  border-radius: 6px;
-}
-
 .Node-contentContainer.has-color {
-  margin-top: -4px;
-  padding: 4px 8px;
+  border-radius: 6px;
+  margin-top: -2px;
+  padding: 2px 8px;
 }
 
 .node-menu-icons-container {
@@ -582,12 +585,12 @@ body,
 .node-hover {
   margin-left: 0;
   position: absolute;
-  top: 8px;
+  top: 2px;
   transform: translate3d(-100%, 0, 0);
 }
 
 .Node.is-currentRoot > .Node-self > .node-hover {
-  top: 10px;
+  top: 1px;
   margin-left: 0;
   transform: translate3d(-100%, 0, 0);
 }
@@ -659,6 +662,7 @@ body,
 }
 
 .node-icon.mod-bookmark:before {
+  font-size: unset;
   content: "\e94a";
 }
 
