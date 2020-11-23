@@ -29,6 +29,10 @@
 
   --shade-plus-darker-dark: rgba(255, 255, 255, 0.15);
 
+  --color-selection-light: #f2f2f2fe;
+
+  --color-selection-dark: #363636fe;
+
   --color-red-light: #fd7070;
   --color-orange-light: #ffaf52;
   --color-yellow-light: #ffd23f;
@@ -108,6 +112,10 @@ body,
 
 /* Theme ------------------------- */
 @media (prefers-color-scheme: light) {
+  ::selection, .Node.is-selected {
+    background: var(--color-selection-light);
+  }
+
   html,
   body {
     background-color: var(--color-0-light);
@@ -144,7 +152,6 @@ body,
     border-right: none;
   }
 
-  .status-bar,
   .is-desktop .LeftPaneContainer,
   .is-desktop .Pane,
   .AppContainer,
@@ -163,7 +170,7 @@ body,
 
   .status-bar {
     color: var(--color-50-light);
-    border-top: 1px solid var(--shade-plus-darker-light);
+    background-color: var(--color-3-light);
   }
 
   .DocumentBreadcrumb {
@@ -240,6 +247,10 @@ body,
 }
 
 @media (prefers-color-scheme: dark) {
+  ::selection, .Node.is-selected {
+    background: var(--color-selection-dark);
+  }
+
   html,
   body {
     background-color: var(--color-0-dark);
@@ -276,7 +287,6 @@ body,
     border-right: none;
   }
 
-  .status-bar,
   .is-desktop .LeftPaneContainer,
   .is-desktop .Pane,
   .AppContainer,
@@ -295,7 +305,7 @@ body,
 
   .status-bar {
     color: var(--color-50-dark);
-    border-top: 1px solid var(--color-0-dark);
+    background-color: var(--color-3-dark);
   }
 
   .DocumentBreadcrumb {
@@ -380,8 +390,6 @@ body,
 /* - Main container */
 .is-desktop .main-container {
   height: calc(100% - var(--app-header-height));
-  display: flex;
-  flex-direction: column;
 }
 
 .is-desktop .DocumentContainer {
@@ -395,13 +403,20 @@ body,
 }
 
 .status-bar {
-  display: none;
-  position: relative;
+  opacity: 0;
+  border-top: none;
+  justify-content: flex-end;
   flex-grow: 0;
   font-size: 11px;
-  padding: 6px 21px;
+  padding: 8px 19px;
   max-height: unset;
   z-index: 100;
+  line-height: 1;
+  transition: 200ms opacity ease-in-out;
+}
+
+.status-bar:hover {
+  opacity: 1;
 }
 
 /* - AppHeader */
