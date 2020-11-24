@@ -764,7 +764,7 @@ body,
 /* - DocumentTools */
 .is-desktop .DocumentTools {
   display: block;
-  right: -7px;
+  right: 7px;
 }
 
 .is-desktop .DocumentTools-overlay {
