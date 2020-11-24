@@ -500,7 +500,6 @@ body,
 
 .is-desktop .DocumentContainer {
   height: 100% !important;
-  overflow-y: auto;
 }
 
 .normal-view {
@@ -765,7 +764,7 @@ body,
 /* - DocumentTools */
 .is-desktop .DocumentTools {
   display: block;
-  right: 0;
+  right: -7px;
 }
 
 .is-desktop .DocumentTools-overlay {
@@ -825,7 +824,7 @@ body,
 }
 
 .Node.is-currentRoot > .Node-self > .node-hover {
-  top: 1px;
+  top: 0px;
   margin-left: 0;
   transform: translate3d(-100%, 0, 0);
 }
