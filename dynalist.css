@@ -36,26 +36,33 @@
 
   --color-selection-dark: #363636fe;
 
-  --color-red-light: #fd7070;
-  --color-orange-light: #ffaf52;
-  --color-yellow-light: #ffd23f;
-  --color-green-light: #1bd5c0;
-  --color-blue-light: #47c9fe;
-  --color-purple-light: #9a6bff;
+  --color-red-light: #FF3B30;
+  --color-orange-light: #FF9500;
+  --color-yellow-light: #FFCC00;
+  --color-green-light: #34C759;
+  --color-blue-light: #5AC8FA;
+  --color-purple-light: #5856D6;
 
-  --color-red-faint-light: #fd707066;
-  --color-orange-faint-light: #ffaf5266;
-  --color-yellow-faint-light: #ffd23f66;
-  --color-green-faint-light: #1bd5c066;
-  --color-blue-faint-light: #47c9fe66;
-  --color-purple-faint-light: #9a6bff66;
+  --color-red-faint-light: #FF3B3044;
+  --color-orange-faint-light: #FF950044;
+  --color-yellow-faint-light: #FFCC0044;
+  --color-green-faint-light: #34C75944;
+  --color-blue-faint-light: #5AC8FA44;
+  --color-purple-faint-light: #5856D644;
 
-  --color-red-faint-dark: #fd707022;
-  --color-orange-faint-dark: #ffaf5222;
-  --color-yellow-faint-dark: #ffd23f22;
-  --color-green-faint-dark: #1bd5c022;
-  --color-blue-faint-dark: #47c9fe22;
-  --color-purple-faint-dark: #9a6bff22;
+  --color-red-dark: #FF453A;
+  --color-orange-dark: #FF9F0A;
+  --color-yellow-dark: #FFD60A;
+  --color-green-dark: #32D74B;
+  --color-blue-dark: #64D2FF;
+  --color-purple-dark: #5E5CE6;
+
+  --color-red-faint-dark: #FF453A22;
+  --color-orange-faint-dark: #FF9F0A22;
+  --color-yellow-faint-dark: #FFD60A22;
+  --color-green-faint-dark: #32D74B22;
+  --color-blue-faint-dark: #64D2FF22;
+  --color-purple-faint-dark: #5E5CE622;
 
   --text-font: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   --text-line-height: 1.5;
@@ -262,10 +269,9 @@ body,
   }
 
   .node-tag {
-    color: var(--color-0-light);
-    background-color: var(--color-50-light);
+    color: var(--color-accent-light);
   }
-
+  
   .Node.is-currentRoot > .Node-self, .Node-self.is-heading {
     color: var(--color-90-light);
   }
@@ -273,31 +279,37 @@ body,
   .set-color-label[data-color="1"],
   .Node-contentContainer.mod-color-label-1 {
     background-color: var(--color-red-faint-light);
+    border-color: var(--color-red-light);
   }
 
   .set-color-label[data-color="2"],
   .Node-contentContainer.mod-color-label-2 {
     background-color: var(--color-orange-faint-light);
+    border-color: var(--color-orange-light);
   }
 
   .set-color-label[data-color="3"],
   .Node-contentContainer.mod-color-label-3 {
     background-color: var(--color-yellow-faint-light);
+    border-color: var(--color-yellow-light);
   }
 
   .set-color-label[data-color="4"],
   .Node-contentContainer.mod-color-label-4 {
     background-color: var(--color-green-faint-light);
+    border-color: var(--color-green-light);
   }
 
   .set-color-label[data-color="5"],
   .Node-contentContainer.mod-color-label-5 {
     background-color: var(--color-blue-faint-light);
+    border-color: var(--color-blue-light);
   }
 
   .set-color-label[data-color="6"],
   .Node-contentContainer.mod-color-label-6 {
     background-color: var(--color-purple-faint-light);
+    border-color: var(--color-purple-light);
   }
 }
 
@@ -448,8 +460,7 @@ body,
   }
 
   .node-tag {
-    color: var(--color-0-dark);
-    background-color: var(--color-50-dark);
+    color: var(--color-accent-dark);
   }
 
   .Node.is-currentRoot > .Node-self, .Node-self.is-heading {
@@ -459,31 +470,37 @@ body,
   .set-color-label[data-color="1"],
   .Node-contentContainer.mod-color-label-1 {
     background-color: var(--color-red-faint-dark);
+    border-color: var(--color-red-dark);
   }
 
   .set-color-label[data-color="2"],
   .Node-contentContainer.mod-color-label-2 {
     background-color: var(--color-orange-faint-dark);
+    border-color: var(--color-orange-dark);
   }
 
   .set-color-label[data-color="3"],
   .Node-contentContainer.mod-color-label-3 {
     background-color: var(--color-yellow-faint-dark);
+    border-color: var(--color-yellow-dark);
   }
 
   .set-color-label[data-color="4"],
   .Node-contentContainer.mod-color-label-4 {
     background-color: var(--color-green-faint-dark);
+    border-color: var(--color-green-dark);
   }
 
   .set-color-label[data-color="5"],
   .Node-contentContainer.mod-color-label-5 {
     background-color: var(--color-blue-faint-dark);
+    border-color: var(--color-blue-dark);
   }
 
   .set-color-label[data-color="6"],
   .Node-contentContainer.mod-color-label-6 {
     background-color: var(--color-purple-faint-dark);
+    border-color: var(--color-purple-dark);
   }
 }
 
@@ -689,7 +706,7 @@ body,
 }
 
 .pane-item-header {
-  font-size: 13px;
+  font-size: 14px;
   padding: 6px 9px;
   border-radius: 4px;
   display: flex;
@@ -788,7 +805,7 @@ body,
 
 /* - Node */
 .Node-contentContainer.has-color {
-  border-radius: 6px;
+  border-radius: 10px;
   margin-top: -2px;
   padding: 2px 8px;
 }
@@ -852,13 +869,11 @@ body,
 }
 
 .node-tag {
-  transform: translate3d(0, -8%, 0);
-  font-size: 75%;
   text-decoration: none;
-  display: inline-block;
-  line-height: 1;
-  padding: 4px 8px;
-  border-radius: 20px;
+}
+
+.node-tag:hover {
+  text-decoration: underline;
 }
 
 /* Icons */
@@ -883,7 +898,6 @@ body,
 .Pane-headerToolbarItem.mod-inbox-capture:before,
 .Pane-headerToolbarItem--collapse:before,
 .Pane-headerToolbarItem.mod-tag-sort:before,
-.DocumentItem-icon:before,
 .FolderItem-icon:before,
 .pane-item-toggler,
 .BookmarkItem-icon:before,
@@ -995,7 +1009,7 @@ body,
 }
 
 .DocumentItem-icon:before {
-  content: "\ea38";
+  content: "\e90c";
 }
 
 .FolderItem-icon:before,
