@@ -16,6 +16,7 @@
   --color-50-light: #797979;
   --color-10-light: #e5e5e5;
   --color-3-light: #f4f4f4;
+  --color-2-light: #f8f8f8;
   --color-0-light: #fff;
 
   --color-90-dark: rgba(255, 255, 255, 0.7);
@@ -129,8 +130,12 @@ body,
 
 /* Theme ------------------------- */
 @media (prefers-color-scheme: light) {
-  ::selection, .Node.is-selected {
+  ::selection {
     background: var(--color-selection-light);
+  }
+
+  .Node.is-selected {
+    background: var(--color-2-light);
   }
 
   html,
@@ -390,8 +395,12 @@ body,
 }
 
 @media (prefers-color-scheme: dark) {
-  ::selection, .Node.is-selected {
+  ::selection {
     background: var(--color-selection-dark);
+  }
+
+  .Node.is-selected {
+    background: var(--color-2-dark);
   }
 
   html,
@@ -629,10 +638,8 @@ body,
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 
     background: rgba(0, 0, 0, 0.05);
-background-blend-mode: luminosity;
-/* #03 Blur/Background #04 */
-
-backdrop-filter: blur(81.5485px);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(81.5485px);
   }
 
   .NotificationsContainer {
