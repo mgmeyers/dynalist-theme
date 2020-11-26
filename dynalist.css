@@ -27,6 +27,9 @@
   --color-accent-light: #007AFF;
   --color-accent-dark: #0A84FF;
 
+  --color-gray-light: #b8b8b8;
+  --color-gray-dark: #6c6c6c;
+
   --shade-plus-darker-light: rgba(0, 0, 0, 0.05);
   --shade-plus-lighter-light: rgba(245, 245, 245, 0.15);
 
@@ -93,7 +96,8 @@ body,
 .Pane-headerText,
 .search-tip-header,
 .view-filter-option-title,
-.is-desktop .setting-section-title {
+.is-desktop .setting-section-title,
+.MenuItem-hotkey {
   font-family: var(--ui-font) !important;
 }
 
@@ -311,6 +315,54 @@ body,
     background-color: var(--color-purple-faint-light);
     border-color: var(--color-purple-light);
   }
+
+  .set-color-label, .set-heading-level {
+    color: var(--color-90-light);
+  }
+
+  .MenuItem.set-color-label:hover {
+    border: 1px solid var(--color-accent-light);
+  }
+
+  .MenuItem.set-color-label.current:hover {
+    border: 2px solid var(--color-accent-light);
+  }
+
+  .ContextMenu {
+    color: var(--color-90-light);
+    border: 1px solid var(--color-10-light);
+  
+    background: rgba(245, 245, 245, 0.8);
+    background-blend-mode: hard-light;
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(81.5485px);
+  }
+  
+  .MenuItem-hotkey, 
+  .MenuItem-icon, 
+  .MenuItem.mod-contains-second-level:after, 
+  .menu-item-secondary-text {
+    color: var(--color-50-light);
+  }
+  
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover, 
+  .MenuItem.mod-activated {
+    background-color: var(--color-gray-light);
+    color: var(--color-0-light);
+  }
+  
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover .MenuItem-hotkey, 
+  .MenuItem.mod-activated .MenuItem-hotkey,
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover .MenuItem-icon, 
+  .MenuItem.mod-activated .MenuItem-icon,
+  .MenuItem.MenuItem.mod-contains-second-level:not(.MenuItem--noHighlight):not(.is-disabled):hover:after,
+  .MenuItem.MenuItem.mod-contains-second-level.mod-activated:after {
+    color: var(--color-0-light);
+  }
+  
+  .MenuGroup + .MenuGroup {
+    border-top: 1px solid var(--color-10-light);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -501,6 +553,53 @@ body,
   .Node-contentContainer.mod-color-label-6 {
     background-color: var(--color-purple-faint-dark);
     border-color: var(--color-purple-dark);
+  }
+
+  .set-color-label, .set-heading-level {
+    color: var(--color-90-dark);
+  }
+
+  .MenuItem.set-color-label:hover {
+    border: 1px solid var(--color-accent-dark);
+  }
+
+  .MenuItem.set-color-label.current:hover {
+    border: 2px solid var(--color-accent-dark);
+  }
+
+  .ContextMenu {
+    color: var(--color-90-dark);
+    border: 1px solid var(--color-0-dark);
+  
+    background: rgba(0, 0, 0, 0.1);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(81.5485px);
+  }
+  
+  .MenuItem-hotkey, 
+  .MenuItem-icon, 
+  .MenuItem.mod-contains-second-level:after, 
+  .menu-item-secondary-text {
+    color: var(--color-50-dark);
+  }
+  
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover, 
+  .MenuItem.mod-activated {
+    background-color: var(--color-gray-dark);
+    color: var(--color-0-dark);
+  }
+  
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover .MenuItem-hotkey, 
+  .MenuItem.mod-activated .MenuItem-hotkey,
+  .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover .MenuItem-icon, 
+  .MenuItem.mod-activated .MenuItem-icon,
+  .MenuItem.MenuItem.mod-contains-second-level:not(.MenuItem--noHighlight):not(.is-disabled):hover:after,
+  .MenuItem.MenuItem.mod-contains-second-level.mod-activated:after {
+    color: var(--color-0-dark);
+  }
+  
+  .MenuGroup + .MenuGroup {
+    border-top: 1px solid var(--color-10-dark);
   }
 }
 
@@ -907,6 +1006,105 @@ body,
 
 .Node.is-checked > .Node-self > .Node-checkbox:after {
   display: none;
+}
+
+/* - Menus */
+.set-color-label, .set-heading-level {
+  border-radius: 4px;
+}
+
+.ContextMenu {
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover, 
+.MenuItem.mod-activated {
+  border-radius: 4px;
+}
+
+.MenuGroup + .MenuGroup {
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.MenuGroup {
+  padding: 0;
+  margin: 0 14px;
+  font-size: unset;
+}
+
+.MenuGroup:first-child {
+  margin: 10px 14px 0;
+}
+
+.MenuGroup:last-child {
+  margin: 0 14px 10px;
+}
+
+.MenuGroup:only-child {
+  margin: 10px 14px;
+}
+
+.MenuItem:not(.set-heading-level):not(.set-color-label) {
+  padding: 5px 10px;
+  margin: 0 -10px;
+  display: flex;
+  align-items: center;
+}
+
+.MenuItem:not(.set-heading-level):not(.set-color-label).js-open-account-settings {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.MenuItem-icon, .MenuItem-hotkey {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.MenuItem-name {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.MenuItem-icon {
+  width: unset;
+  font-size: unset;
+  margin: 0 6px 0 0;
+  position: static;
+}
+
+.MenuItem-hotkey {
+  font-size: unset;
+  padding: 0;
+  float: none;
+}
+
+.main-menu-user-name {
+  flex-shrink: 0;
+}
+
+.menu-item-secondary-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.set-heading-level-menu {
+  flex-grow: 1;
+}
+
+.FileNavContextMenu {
+  transform: translate3d(-16px, 16px, 0);
+}
+
+@media screen and (min-width: 510px) {
+  .main-menu {
+    right: 17px;
+    top: 43px;
+  }
 }
 
 /* Icons */
