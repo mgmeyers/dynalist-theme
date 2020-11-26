@@ -22,6 +22,7 @@
   --color-50-dark: rgba(235, 235, 245, 0.6);
   --color-10-dark: rgba(235, 235, 245, 0.3);
   --color-3-dark: #363636;
+  --color-2-dark: #282828;
   --color-0-dark: #1e1e1e;
 
   --color-accent-light: #007AFF;
@@ -568,12 +569,10 @@ body,
   }
 
   .ContextMenu {
+    box-shadow: none;
     color: var(--color-90-dark);
-    border: 1px solid var(--color-0-dark);
-  
-    background: rgba(0, 0, 0, 0.1);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(81.5485px);
+    border: 1px solid var(--color-10-dark);
+    background: var(--color-2-dark);
   }
   
   .MenuItem-hotkey, 
@@ -586,7 +585,7 @@ body,
   .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover, 
   .MenuItem.mod-activated {
     background-color: var(--color-gray-dark);
-    color: var(--color-0-dark);
+    color: var(--color-90-dark);
   }
   
   .MenuItem:not(.MenuItem--noHighlight):not(.is-disabled):hover .MenuItem-hotkey, 
@@ -595,7 +594,7 @@ body,
   .MenuItem.mod-activated .MenuItem-icon,
   .MenuItem.MenuItem.mod-contains-second-level:not(.MenuItem--noHighlight):not(.is-disabled):hover:after,
   .MenuItem.MenuItem.mod-contains-second-level.mod-activated:after {
-    color: var(--color-0-dark);
+    color: var(--color-90-dark);
   }
   
   .MenuGroup + .MenuGroup {
