@@ -817,7 +817,10 @@ body,
 }
 
 .Node-self {
+  display: flex;
   position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .Node-self:hover .node-menu-icons-container {
@@ -876,6 +879,36 @@ body,
   text-decoration: underline;
 }
 
+.Node-checkbox {
+  font-size: 16px;
+}
+
+.is-mediumFont .Node-checkbox {
+  line-height: var(--text-medium-line-height);
+  margin: 0px 5px 0 3px;
+}
+
+.is-largeFont .Node-checkbox {
+  line-height: var(--text-large-line-height);
+  margin: 0px 5px 0 3px;
+}
+
+.Node-checkbox:before {
+  cursor: pointer;
+  width: unset;
+  height: unset;
+  color: #00000000;
+  vertical-align: unset;
+}
+
+.Node.is-checked > .Node-self > .Node-checkbox:before {
+  color: inherit;
+}
+
+.Node.is-checked > .Node-self > .Node-checkbox:after {
+  display: none;
+}
+
 /* Icons */
 
 .AppHeader-mainMenu:before,
@@ -901,7 +934,8 @@ body,
 .FolderItem-icon:before,
 .pane-item-toggler,
 .BookmarkItem-icon:before,
-.tag-pane-item-icon:before {
+.tag-pane-item-icon:before,
+.Node-checkbox:before {
   font-family: var(--icon-font) !important;
   font-weight: normal;
   font-style: normal;
@@ -1028,4 +1062,8 @@ body,
 
 .pane-item-header.is-collapsed > .pane-item-toggler:before {
   content: "";
+}
+
+.Node-checkbox:before {
+  content: "\e9a4";
 }
