@@ -98,7 +98,8 @@ body,
 .search-tip-header,
 .view-filter-option-title,
 .is-desktop .setting-section-title,
-.MenuItem-hotkey {
+.MenuItem-hotkey,
+.NotificationsContainer-header {
   font-family: var(--ui-font) !important;
 }
 
@@ -335,7 +336,7 @@ body,
   
     background: rgba(245, 245, 245, 0.8);
     background-blend-mode: hard-light;
-    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px 1px 3px rgba(255, 255, 255, 0.5), 0px 2px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(81.5485px);
   }
   
@@ -363,6 +364,28 @@ body,
   
   .MenuGroup + .MenuGroup {
     border-top: 1px solid var(--color-10-light);
+  }
+
+  .popover {
+    border: 1px solid var(--color-10-light);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    background: rgba(245, 245, 245, 0.15);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(81.5485px)
+  }
+
+  .NotificationsContainer {
+    color: var(--color-90-light);
+  }
+
+  .search-tip-section + .search-tip-section, 
+  .view-filter-option + .view-filter-option {
+    border-top: 1px solid var(--color-10-light);
+  }
+
+  .view-filter-option-title, .NotificationsContainer-header {
+    color: var(--color-50-light);
   }
 }
 
@@ -599,6 +622,30 @@ body,
   
   .MenuGroup + .MenuGroup {
     border-top: 1px solid var(--color-10-dark);
+  }
+
+  .popover {
+    border: 1px solid var(--color-10-dark);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+
+    background: rgba(0, 0, 0, 0.05);
+background-blend-mode: luminosity;
+/* #03 Blur/Background #04 */
+
+backdrop-filter: blur(81.5485px);
+  }
+
+  .NotificationsContainer {
+    color: var(--color-90-dark);
+  }
+
+  .search-tip-section + .search-tip-section, 
+  .view-filter-option + .view-filter-option {
+    border-top: 1px solid var(--color-10-dark);
+  }
+
+  .view-filter-option-title, .NotificationsContainer-header {
+    color: var(--color-50-dark);
   }
 }
 
@@ -1034,12 +1081,12 @@ body,
   font-size: unset;
 }
 
-.MenuGroup:first-child {
+.MenuGroup:first-child, .file-details + .MenuGroup {
   margin: 10px 14px 0;
 }
 
 .MenuGroup:last-child {
-  margin: 0 14px 10px;
+  margin: 5px 14px 10px;
 }
 
 .MenuGroup:only-child {
@@ -1104,6 +1151,71 @@ body,
     right: 17px;
     top: 43px;
   }
+}
+
+.NotificationsContainer {
+  top: 42px;
+  right: 94px;
+}
+
+.view-filter {
+  top: 54px;
+}
+
+.view-filter:before, 
+.view-filter:after,
+.NotificationsContainer:before,
+.NotificationsContainer:after,
+.search-tip-arrow, 
+.search-tip-arrow-shadow {
+  display: none;
+}
+
+.popover {
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.NotificationsContainer-closeButton {
+  display: none;
+}
+
+.NotificationsContainer-header {
+  text-align: unset;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.NotificationsContainer-emptyState, .Notification {
+  font-size: 13px;
+  border-top: none;
+}
+
+.NotificationsContainer-emptyState {
+  line-height: 1;
+  height: auto;
+  padding: 40px 0;
+}
+
+.search-tip-section, .view-filter-option {
+  padding: 0;
+}
+
+.search-tip-section + .search-tip-section, 
+.view-filter-option + .view-filter-option {
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.view-filter-option-title {
+  text-transform: capitalize;
+  font-size: 13px;
+  letter-spacing: unset;
+  font-weight: 700;
+}
+
+.view-filter-option-choices {
+  justify-content: flex-start;
 }
 
 /* Icons */
