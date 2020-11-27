@@ -72,6 +72,9 @@
   --text-font: Inter, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
   --text-line-height: 1.5;
 
+  --text-small-font-size: 16px;
+  --text-small-line-height: 30px;
+
   --text-medium-font-size: 18px;
   --text-medium-line-height: 34px;
 
@@ -100,7 +103,8 @@ body,
 .view-filter-option-title,
 .is-desktop .setting-section-title,
 .MenuItem-hotkey,
-.NotificationsContainer-header {
+.NotificationsContainer-header,
+input, textarea, select {
   font-family: var(--ui-font) !important;
 }
 
@@ -108,6 +112,15 @@ body,
   font-family: var(--text-font);
   font-weight: var(--text-font-weight);
   font-feature-settings: "ss01", "cv05", "cv07";
+}
+
+.is-smallFont .Node-contentContainer {
+  font-size: var(--text-small-font-size);
+  line-height: var(--text-small-line-height) !important;
+}
+
+.is-smallFont .node-line {
+  line-height: var(--text-small-line-height) !important;
 }
 
 .is-mediumFont .Node-contentContainer {
@@ -179,6 +192,34 @@ body,
   .AppContainer,
   .DocumentTools-overlay {
     background-color: var(--color-0-light);
+  }
+
+  .DocumentSearch {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-10-light);
+  }
+
+  .DocumentSearch:hover {
+    border: 1px solid rgba(58, 108, 217, 0.5);
+  }
+
+  .DocumentSearch:focus {
+    border: 1px solid rgba(58, 108, 217, 0.5);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 
+      0 0 0 2px rgba(58, 108, 217, 0.5);
+  }
+
+  .DocumentTools-bookmarkSearch,
+  .DocumentSearch-clear {
+    color: var(--color-50-light);
+  }
+
+  input, textarea, select {
+    color: var(--color-90-light);
+  }
+
+  input:focus, textarea:focus {
+    color: var(--color-90-light);
   }
 
   .DocumentTools-icon {
@@ -442,6 +483,34 @@ body,
   .AppContainer,
   .DocumentTools-overlay {
     background-color: var(--color-0-dark);
+  }
+
+  .DocumentSearch {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-10-dark);
+  }
+
+  .DocumentSearch:hover {
+    border: 1px solid rgba(58, 108, 217, 0.5);
+  }
+
+  .DocumentSearch:focus {
+    border: 1px solid rgba(58, 108, 217, 0.5);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 
+      0 0 0 2px rgba(58, 108, 217, 0.5);
+  }
+
+  .DocumentTools-bookmarkSearch,
+  .DocumentSearch-clear {
+    color: var(--color-50-dark);
+  }
+
+  input, textarea, select {
+    color: var(--color-90-dark);
+  }
+
+  input:focus, textarea:focus {
+    color: var(--color-90-dark);
   }
 
   .DocumentTools-icon {
@@ -951,6 +1020,52 @@ body,
   border-radius: 6px;
 }
 
+
+
+.DocumentSearch-clear {
+  right: 8px;
+  top: 7px;
+  line-height: 1;
+  height: unset;
+  width: unset;
+}
+
+.DocumentTools-bookmarkSearch {
+  top: 9px;
+  left: 6px;
+  line-height: 1;
+  padding: 0;
+}
+
+.search-tip {
+  right: 0;
+  top: 4px;
+}
+
+.DocumentTools-search {
+  position: absolute;
+  top: -3px;
+  right: 36px;
+}
+
+.DocumentSearch {
+  right: unset;
+  top: unset;
+  position: unset;
+  height: auto;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 7px 30px 7px 28px;
+}
+
+.DocumentTools-bookmarkSearch:not([style$="block;"]) + .DocumentSearch {
+  padding: 7px 30px 7px 10px;
+}
+
+.DocumentSearch:placeholder-shown {
+  padding: 7px 30px 7px 10px;
+}
+
 /* - Node */
 .Node-contentContainer.has-color {
   border-radius: 10px;
@@ -1029,6 +1144,11 @@ body,
 
 .Node-checkbox {
   font-size: 16px;
+}
+
+.is-smallFont .Node-checkbox {
+  line-height: var(--text-small-line-height);
+  margin: 0px 5px 0 3px;
 }
 
 .is-mediumFont .Node-checkbox {
@@ -1249,7 +1369,10 @@ body,
 .BookmarkItem-icon:before,
 .tag-pane-item-icon:before,
 .Node-checkbox:before,
-.MenuItem-icon:before {
+.MenuItem-icon:before,
+.MenuItem.mod-contains-second-level:after,
+.DocumentSearch-clear:after,
+.DocumentTools-bookmarkSearch:before {
   font-family: var(--icon-font) !important;
   font-weight: normal;
   font-style: normal;
@@ -1546,4 +1669,37 @@ body,
 
 .MenuItem.mod-import-opml .MenuItem-icon:before {
   content: "\eca2";
+}
+
+.MenuItem.mod-contains-second-level:after {
+  font-size: 14px;
+  right: 8px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  content: "\ec8f";
+}
+
+.DocumentSearch-clear:after {
+  display: block;
+  position: static;
+  content: "\ebea";
+  font-size: 20px;
+}
+
+.DocumentTools-bookmarkSearch:before {
+  display: block;
+  font-size: 16px;
+  content: "\e94a";
+}
+
+.DocumentTools-bookmarkSearch:hover:before {
+  content: "\e950";
+}
+
+.DocumentTools-bookmarkSearch.is-alreadyBookmarked:before {
+  content: "\ec31";
+}
+
+.DocumentTools-bookmarkSearch.is-alreadyBookmarked:hover:before {
+  content: "\ec36";
 }
