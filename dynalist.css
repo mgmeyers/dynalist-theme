@@ -144,6 +144,10 @@ input, textarea, select {
 
 /* Theme ------------------------- */
 @media (prefers-color-scheme: light) {
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-10-light);
+  }
+
   ::selection {
     background: var(--color-selection-light);
   }
@@ -466,6 +470,10 @@ input, textarea, select {
 }
 
 @media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-10-dark);
+  }
+
   ::selection {
     background: var(--color-selection-dark);
   }
@@ -1133,7 +1141,7 @@ input, textarea, select {
 
 /* - Node */
 .Node-contentContainer.has-color {
-  border-radius: 10px;
+  border-radius: 4px;
   margin-top: -2px;
   padding: 2px 8px;
 }
@@ -1453,6 +1461,10 @@ input, textarea, select {
 
 .view-filter-option-choice.mod-pro-only:after {
   display: none;
+}
+
+.view-filter {
+  width: 350px;
 }
 
 /* Icons */
