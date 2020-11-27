@@ -21,6 +21,7 @@
 
   --color-90-dark: rgba(255, 255, 255, 0.7);
   --color-50-dark: rgba(235, 235, 245, 0.6);
+  --color-40-dark: #6E6D70;
   --color-10-dark: rgba(235, 235, 245, 0.3);
   --color-3-dark: #363636;
   --color-2-dark: #282828;
@@ -425,10 +426,41 @@ input, textarea, select {
 
   .search-tip-section + .search-tip-section, 
   .view-filter-option + .view-filter-option {
-    border-top: 1px solid var(--color-10-light);
+    border-top: none;
   }
 
-  .view-filter-option-title, .NotificationsContainer-header {
+  .NotificationsContainer-header {
+    color: var(--color-50-light);
+  }
+
+  .view-filter-option-title {
+    color: var(--color-90-light);
+  }
+
+  .view-filter-option-choices {
+    background-color: var(--shade-plus-darker-light);
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .view-filter-option-choice {
+    color: var(--color-90-light);
+  }
+
+  .view-filter-option-choice:hover {
+    background-color: unset;
+  }
+
+  .view-filter-option-choice.is-selected {
+    color: var(--color-90-light);
+    background-color: var(--color-0-light);
+    box-shadow: 0px 0.5px 1px 0.5px rgba(0, 0, 0, 0.1);
+  }
+
+  .view-filter-option-choice:after {
+    background-color: var(--shade-plus-darker-light);
+  }
+
+  .global-checked-item-visibility, .global-notes-visibility {
     color: var(--color-50-light);
   }
 }
@@ -486,6 +518,7 @@ input, textarea, select {
   }
 
   .DocumentSearch {
+    background-color: var(--color-2-dark);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--color-10-dark);
   }
@@ -713,10 +746,42 @@ input, textarea, select {
 
   .search-tip-section + .search-tip-section, 
   .view-filter-option + .view-filter-option {
-    border-top: 1px solid var(--color-10-dark);
+    border-top: none;
   }
 
-  .view-filter-option-title, .NotificationsContainer-header {
+  .NotificationsContainer-header {
+    color: var(--color-50-dark);
+  }
+
+  .view-filter-option-title {
+    color: var(--color-90-dark);
+  }
+
+  .view-filter-option-choices {
+    background-color: var(--color-3-dark);
+    box-shadow: inset 0px 0.5px 0.5px rgba(0, 0, 0, 0.1), 
+      inset 0px -0.5px 0.5px rgba(255, 255, 255, 0.1);
+  }
+
+  .view-filter-option-choice {
+    color: var(--color-90-dark);
+  }
+
+  .view-filter-option-choice:hover {
+    background-color: unset;
+  }
+
+  .view-filter-option-choice.is-selected {
+    color: var(--color-90-dark);
+    background-color: var(--color-40-dark);
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.1)
+  }
+
+  .view-filter-option-choice:after {
+    background-color: var(--shade-plus-darker-dark);
+  }
+
+  .global-checked-item-visibility, .global-notes-visibility {
     color: var(--color-50-dark);
   }
 }
@@ -1308,6 +1373,7 @@ input, textarea, select {
   text-align: unset;
   font-size: 13px;
   font-weight: 700;
+  padding: 0 0 5px;
 }
 
 .NotificationsContainer-emptyState, .Notification {
@@ -1335,11 +1401,58 @@ input, textarea, select {
   text-transform: capitalize;
   font-size: 13px;
   letter-spacing: unset;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .view-filter-option-choices {
   justify-content: flex-start;
+}
+
+.view-filter-option-choice.is-selected {
+  border: none;
+}
+
+.view-filter-option-choices {
+  position: relative;
+  padding: 1px;
+  border-radius: 4px;
+  margin-right: 1px;
+}
+
+.view-filter-option-choice:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 1px;
+  height: 50%;
+  top: 50%;
+  right: -1px;
+  transform: translate3d(0, -50%, 0);
+}
+
+.view-filter-option-choice:last-child {
+  margin-right: 0;
+}
+
+.view-filter-option-choice:last-child:after {
+  display: none;
+}
+
+.view-filter-option-choice {
+  font-weight: 500;
+  flex-grow: 1;
+  padding: 3px 11px;
+  border-radius: 4px;
+  text-align: center;
+  border: none;
+}
+
+.view-filter-option-choice.mod-pro-only {
+  padding-right: 11px;
+}
+
+.view-filter-option-choice.mod-pro-only:after {
+  display: none;
 }
 
 /* Icons */
