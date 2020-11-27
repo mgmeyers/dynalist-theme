@@ -375,9 +375,7 @@ body,
     border: 1px solid var(--color-10-light);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 
-    background: rgba(245, 245, 245, 0.15);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(81.5485px)
+    background: var(--color-0-light);
   }
 
   .NotificationsContainer {
@@ -637,9 +635,7 @@ body,
     border: 1px solid var(--color-10-dark);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 
-    background: rgba(0, 0, 0, 0.05);
-    background-blend-mode: luminosity;
-    backdrop-filter: blur(81.5485px);
+    background: var(--color-2-dark);
   }
 
   .NotificationsContainer {
@@ -1127,6 +1123,7 @@ body,
   font-size: unset;
   margin: 0 6px 0 0;
   position: static;
+  font-size: 14px;
 }
 
 .MenuItem-hotkey {
@@ -1251,7 +1248,8 @@ body,
 .pane-item-toggler,
 .BookmarkItem-icon:before,
 .tag-pane-item-icon:before,
-.Node-checkbox:before {
+.Node-checkbox:before,
+.MenuItem-icon:before {
   font-family: var(--icon-font) !important;
   font-weight: normal;
   font-style: normal;
@@ -1382,4 +1380,170 @@ body,
 
 .Node-checkbox:before {
   content: "\e9a4";
+}
+
+
+.MenuItem--expand .MenuItem-icon:before, 
+.MenuItem--expandAll .MenuItem-icon:before, 
+.MenuItem--expandToLevelParent .MenuItem-icon:before {
+  content: "\eb21";
+}
+
+.MenuItem--collapse .MenuItem-icon:before, 
+.MenuItem--collapseAll .MenuItem-icon:before {
+  content: "\eaed";
+}
+
+.MenuItem--zoomIn .MenuItem-icon:before {
+  content: "\ebec";
+}
+
+.MenuItem--addNote .MenuItem-icon:before {
+  content: "\eb03";
+}
+
+.MenuItem--deleteNode .MenuItem-icon:before, 
+.MenuItem--deleteFolder .MenuItem-icon:before, 
+.MenuItem--deleteDocument .MenuItem-icon:before, 
+.MenuItem--deleteCheckedNodes .MenuItem-icon:before, 
+.MenuItem--deleteBookmark .MenuItem-icon:before, 
+.MenuItem--deleteTag .MenuItem-icon:before {
+  content: "\ebac";
+}
+
+.MenuItem--bookmarkDocument .MenuItem-icon:before, 
+.MenuItem--bookmarkNode .MenuItem-icon:before {
+  content: "\e950";
+}
+
+.MenuItem--sortChildren .MenuItem-icon:before {
+  content: "\eb79";
+}
+
+/* Search and replace SVG */
+.MenuItem--searchReplace .MenuItem-icon:before {
+  content: "\eb38"
+}
+
+.MenuItem--searchReplace .MenuItem-icon > svg {
+  display: none;
+}
+
+.MenuItem--indent .MenuItem-icon:before {
+  content: "\ec94";
+}
+
+.MenuItem--unindent .MenuItem-icon:before {
+  content: "\ec93";
+}
+
+.MenuItem--moveNode .MenuItem-icon, .MenuItem--moveNodeMobile .MenuItem-icon {
+  font-size: unset;
+  line-height: unset;
+  top: unset;
+}
+
+.MenuItem--moveNode .MenuItem-icon:before, 
+.MenuItem--moveNodeMobile .MenuItem-icon:before {
+  content: "\eaa0";
+}
+
+.MenuItem--showCheckbox .MenuItem-icon:before, 
+.MenuItem--hideCheckbox .MenuItem-icon:before, 
+.MenuItem--addCheckboxToChildren .MenuItem-icon:before, 
+.MenuItem--removeCheckboxFromChildren .MenuItem-icon:before {
+  content: "\eb82";
+}
+
+.MenuItem--check .MenuItem-icon:before, 
+.MenuItem--uncheck .MenuItem-icon:before {
+  content: "\e9a4";
+}
+
+.MenuItem--makeNumberedList .MenuItem-icon:before {
+  content: "\eaa4";
+}
+
+.MenuItem--unmakeNumberedList .MenuItem-icon:before {
+  content: "\eaa6";
+}
+
+.MenuItem--getLink .MenuItem-icon:before {
+  content: "\ea9e";
+}
+
+.MenuItem--showReferences .MenuItem-icon:before {
+  content: "\eb54";
+}
+
+.MenuItem--showReferences .MenuItem-icon > svg {
+  display: none;
+}
+
+.MenuItem--mindMapView .MenuItem-icon:before {
+  content: "\eb6d";
+}
+
+.MenuItem--mindMapView .MenuItem-icon > svg {
+  display: none;
+}
+
+.MenuItem--exportDocument .MenuItem-icon:before, 
+.MenuItem--exportNode .MenuItem-icon:before {
+  content: "\ed07";
+}
+
+.MenuItem--setAsInbox .MenuItem-icon:before {
+  content: "\ed48";
+}
+
+.MenuItem--manageFolderCollabs .MenuItem-icon:before, 
+.MenuItem--manageDocumentCollabs .MenuItem-icon:before, 
+.MenuItem--shareRootNode .MenuItem-icon:before {
+  content: "\ea61";
+}
+
+.MenuItem--copyDocument .MenuItem-icon:before {
+  content: "\e9e7";
+  font-size: unset;
+}
+
+.MenuItem--renameFile .MenuItem-icon:before, 
+.MenuItem--renameBookmark .MenuItem-icon:before, 
+.MenuItem--renameTag .MenuItem-icon:before {
+  content: "\ea22";
+}
+
+.MenuItem--toggleArchive .MenuItem-icon:before {
+  content: "\ebfc";
+}
+
+.MenuItem--versionHistory .MenuItem-icon:before {
+  content: "\ea72";
+}
+
+.MenuItem--newDocument .MenuItem-icon:before, 
+.MenuItem--newDocumentUnderRoot .MenuItem-icon:before {
+  content: "\ed12";
+}
+
+.MenuItem--newFolder .MenuItem-icon:before, 
+.MenuItem--newFolderUnderRoot .MenuItem-icon:before {
+  content: "\ed21";
+}
+
+.MenuItem--referral .MenuItem-icon:before {
+  content: "";
+}
+
+.MenuItem--settings .MenuItem-icon:before {
+  content: "\e9d0";
+}
+
+.MenuItem--feedback .MenuItem-icon:before {
+  content: "\ea6f";
+}
+
+.MenuItem.mod-import-opml .MenuItem-icon:before {
+  content: "\eca2";
 }
